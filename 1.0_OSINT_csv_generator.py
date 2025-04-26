@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the dataset
-OSINT_df = pd.read_csv('missile_attacks_daily.csv')  # replace with your actual filename
+OSINT_df = pd.read_csv('Data/missile_attacks_daily.csv')  # replace with your actual filename
 
 # Clean blanks and NaNs
 OSINT_df['time_start'] = OSINT_df['time_start'].astype(str).str.strip()
@@ -28,4 +28,4 @@ df_filtered = OSINT_df[(OSINT_df['time_start'] >= march_start) & (OSINT_df['time
 # Save the filtered DataFrame
 OSINT_df[['time_start', 'time_end', 'target']].to_csv('OSINT.csv', index=False)
 
-print("Filtered dataset saved to 'OSINT.csv'")
+print("Filtered dataset saved to 'Data/OSINT.csv'")
